@@ -19,7 +19,12 @@ const style = {
   p: 4,
 };
 
-const Index = () => {
+interface addressPointProps {
+  icon: boolean | undefined;
+  design: number;
+}
+
+const Index = ({ icon, design }: addressPointProps) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -39,19 +44,30 @@ const Index = () => {
         alignItems="center"
         onClick={handleOpen}
       >
-        <Image
-          width={18}
-          height={18}
-          priority
-          src={IconAddress}
-          alt="icon-address"
-          data-testid="address"
-        />
+        {icon && (
+          <Image
+            width={18}
+            height={18}
+            priority
+            src={IconAddress}
+            alt="icon-address"
+            data-testid="address"
+          />
+        )}
         <Typography
-          sx={{
-            color: "#000",
-            fontSize: "12px",
-          }}
+          sx={
+            design === 1
+              ? {
+                  color: "#000",
+                  fontSize: "12px",
+                }
+              : {
+                  textDecoration: "#4649FF dotted underline",
+                  color: "#4649FF",
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                }
+          }
         >
           Avenida Carmelo Perez #626
         </Typography>

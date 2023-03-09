@@ -15,11 +15,11 @@ const Index = () => {
     >
       <Grid
         container
-        spacing={5}
+        spacing={0}
         justifyContent="space-between"
         alignItems="center"
       >
-        <Grid item xs={9.5}>
+        <Grid item xs={9}>
           <Link href="/home">
             <Typography
               sx={{
@@ -33,8 +33,8 @@ const Index = () => {
             </Typography>
           </Link>
         </Grid>
-        <Grid item xs={2.5}>
-          <AddressPoint />
+        <Grid item xs={2}>
+          <AddressPoint icon={true} design={1} />
         </Grid>
       </Grid>
     </Box>

@@ -16,7 +16,7 @@ const PetForm = () => {
 
   const onSubmit = (dataForm: any) => {
     console.log(dataForm);
-    router.push("/dashboard");
+    router.push("/home");
   };
 
   return (

@@ -11,6 +11,7 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import IconHeart from "@/assets/icons/heart.svg";
 import IconShare from "@/assets/icons/share.svg";
+import IconButton from "@mui/material/IconButton";
 
 const Name = styled(Typography)`
   font-size: 27px;
@@ -35,7 +36,7 @@ const Reward = styled(Typography)`
   border: 1px solid #03c988;
   display: inline-block;
   padding: 3px 15px;
-  font-size: 12.5px;
+  font-size: 12px;
   color: #03c988;
   border-radius: 6px;
 `;
@@ -221,9 +222,9 @@ const Index = ({
                 </Stack>
               </Grid>
               <Grid item xs={1.5}>
-                <Stack direction="row" spacing={3.5} alignItems="columns">
+                <Stack direction="row" spacing={1} alignItems="columns">
                   <Tooltip title="Me gusta">
-                    <Icon>
+                    <IconButton>
                       <Image
                         width={20}
                         height={20}
@@ -232,10 +233,10 @@ const Index = ({
                         alt="icon-heart"
                         data-testid="heart"
                       />
-                    </Icon>
+                    </IconButton>
                   </Tooltip>
                   <Tooltip title="Compartir">
-                    <Icon>
+                    <IconButton>
                       <Image
                         width={20}
                         height={20}
@@ -244,7 +245,7 @@ const Index = ({
                         alt="icon-share"
                         data-testid="share"
                       />
-                    </Icon>
+                    </IconButton>
                   </Tooltip>
                 </Stack>
               </Grid>

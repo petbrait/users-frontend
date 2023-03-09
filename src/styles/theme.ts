@@ -4,10 +4,6 @@ import localFont from "@next/font/local";
 
 import { colors } from "../constants/colors";
 
-// const Montserrat = localFont({
-//   src: '../assets/fonts/montserrat-semibold.otf',
-// });
-
 const Poppins = localFont({
   src: "../assets/fonts/Poppins-Regular.otf",
 });

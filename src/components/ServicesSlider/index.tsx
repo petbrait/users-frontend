@@ -1,5 +1,5 @@
 import Box from "@mui/material/Box";
-import { Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
 import ServiceItem from "./components/ServiceItem";
 import Advertisements from "@/components/Advertisements/home";
 import IconVet from "@/assets/icons/vet.png";
