@@ -6,7 +6,7 @@ import ToggleButton from "@mui/material/ToggleButton";
 import PetForm from "./components/PetForm";
 import ServiceForm from "./components/ServiceForm";
 import InfoBanner from "./components/InfoBanner";
-import { Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
 
 const Index = () => {
   const [alignment, setAlignment] = useState("pet");

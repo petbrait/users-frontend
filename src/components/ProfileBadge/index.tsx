@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { getUser } from "@/core/api";
 import Link from "next/link";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -29,6 +31,17 @@ const Name = styled(Typography)`
 `;
 
 const Index = () => {
+  const uid =
+    (typeof window !== "undefined" && localStorage.getItem("uid")) || "";
+
+  useEffect(() => {
+    getUser(uid)
+      .then((data) => {
+        console.log("data", data);
+      })
+      .catch((error) => {});
+  }, []);
+
   return (
     <Wrapper>
       <Grid container spacing={10} alignItems="center" justifyContent="center">

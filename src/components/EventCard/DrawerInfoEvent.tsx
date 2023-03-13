@@ -19,6 +19,12 @@ const Banner = styled(Image)`
 
 const Participants = styled(Box)`
   border: 1px solid grey;
+  padding: 10px;
+`;
+
+const TitleParticipants = styled(Typography)`
+  border: 1px solid grey;
+  padding: 10px;
 `;
 
 const Name = styled(Typography)`
@@ -59,6 +65,9 @@ const Index = () => {
               praesentium consequuntur impedit libero dolor, magnam, veniam
               amet. Beatae, non laborum.
             </Text>
+          </Box>
+          <Box>
+            <Participants></Participants>
           </Box>
         </Grid>
         <Grid item xs={1}>

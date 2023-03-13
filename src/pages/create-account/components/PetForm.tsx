@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
+import { createUser, createProfile } from "@/core/api";
 import Input from "@/components/Input";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+import LoadingButton from "@mui/lab/LoadingButton";
 
 const PetForm = () => {
   const router = useRouter();
@@ -14,9 +16,25 @@ const PetForm = () => {
     formState: { errors },
   } = useForm();
 
+  const [loading, setLoading] = useState(false);
+
   const onSubmit = (dataForm: any) => {
+    setLoading(true);
     console.log(dataForm);
-    router.push("/home");
+    createUser(dataForm)
+      .then((uid: any) => {
+        createProfile(uid, dataForm)
+          .then(() => {
+            setLoading(false);
+            router.push("/home");
+          })
+          .catch((error) => {
+            setLoading(false);
+          });
+      })
+      .catch((error) => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -28,7 +46,7 @@ const PetForm = () => {
               type="text"
               register={register}
               errors={errors}
-              keyName="nick_name"
+              keyName="pet_name"
               placeholder="Nombre o apodo"
             />
           </Grid>
@@ -60,14 +78,25 @@ const PetForm = () => {
             />
           </Grid>
         </Grid>
-        <Button
+
+        <LoadingButton
+          sx={{ marginTop: "30px", color: "#fff" }}
+          size="medium"
+          color="primary"
+          type="submit"
+          loading={loading}
+          variant="contained"
+        >
+          <span> Crear cuenta</span>
+        </LoadingButton>
+        {/* <Button
           sx={{ marginTop: "30px", color: "#fff" }}
           type="submit"
           variant="contained"
           size="medium"
         >
           Crear cuenta
-        </Button>
+        </Button> */}
       </form>
     </Box>
   );

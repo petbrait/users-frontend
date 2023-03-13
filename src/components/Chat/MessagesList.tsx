@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
-import nl2br from "react-newline-to-break";
 
 const Wrapper = styled(Box)`
   height: calc(100vh - 160px);
