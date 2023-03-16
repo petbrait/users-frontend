@@ -1,4 +1,4 @@
-import { firebaseApp, db } from "@/firebase";
+import { firebaseApp, db } from "../firebase";
 import { doc, getDoc } from "firebase/firestore";
 
 interface authProps {
