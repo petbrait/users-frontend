@@ -11,7 +11,7 @@ const Index = () => {
       <ViewWrapper>
         <Logo />
         <ServicesSlider />
-        <Chat />
+        {/* <Chat /> */}
         <LostPets />
       </ViewWrapper>
       <ProfileBadge />

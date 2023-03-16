@@ -28,15 +28,6 @@ const Name = styled(Typography)`
   font-weight: bold;
 `;
 
-const Address = styled(Typography)`
-  font-size: 12px;
-  margin-bottom: 5px;
-  & strong {
-    margin-right: 3px;
-    color: #4c4c4c;
-  }
-`;
-
 const ContentFavoriteIcon = styled(Box)`
   position: absolute;
   top: 10px;
@@ -46,12 +37,14 @@ const ContentFavoriteIcon = styled(Box)`
 interface markerProps {
   view: string;
   name: string;
+  about: string;
   address: string;
   phone_number?: string | undefined | null;
   position: {
     lat: number;
     lng: number;
   };
+  assigned_pets: number;
   service: number;
   service_type: number;
 }
@@ -71,7 +64,7 @@ const Index = (vet: markerProps) => {
         alt="Logo Petco"
         variant="rounded"
         sx={{ width: "100%", height: 140, borderRadius: 5, bgcolor: "#e5e5e5" }}
-        onClick={() => handleOpen(1)}
+        onClick={() => handleOpen(0)}
       />
       <ContentFavoriteIcon>
         <IconButton aria-label="like" color="primary">
@@ -85,9 +78,8 @@ const Index = (vet: markerProps) => {
           />
         </IconButton>
       </ContentFavoriteIcon>
-      <Box mt={1} pl={0.5} pr={0.5} onClick={() => handleOpen(1)}>
+      <Box mt={1} pl={0.5} pr={0.5} onClick={() => handleOpen(0)}>
         <Name>{vet.name}</Name>
-        {/* <Address>{address}</Address> */}
         <Rating
           size="small"
           name="half-rating"
@@ -96,7 +88,7 @@ const Index = (vet: markerProps) => {
           readOnly
         />
       </Box>
-      <Box pl={0.5} pr={0.5} pb={0.5} onClick={() => handleOpen(2)}>
+      <Box pl={0.5} pr={0.5} pb={0.5} onClick={() => handleOpen(1)}>
         <Button size="small">Agendar cita</Button>
       </Box>
       <ModalInfo open={open} handleClose={handleClose} tab={tab} vet={vet} />
